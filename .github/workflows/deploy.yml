@@ -26,10 +26,16 @@ jobs:
 
       - name: Build Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/wexa-ai:latest
+          # Force lowercase for username
+          LOWERCASE_USER=${{ github.repository_owner }}
+          LOWERCASE_USER=${LOWERCASE_USER,,}
+          IMAGE_NAME=ghcr.io/$LOWERCASE_USER/wexa-ai:latest
+          echo "IMAGE_NAME=$IMAGE_NAME"
           docker build -t $IMAGE_NAME .
 
       - name: Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/wexa-ai:latest
+          LOWERCASE_USER=${{ github.repository_owner }}
+          LOWERCASE_USER=${LOWERCASE_USER,,}
+          IMAGE_NAME=ghcr.io/$LOWERCASE_USER/wexa-ai:latest
           docker push $IMAGE_NAME
