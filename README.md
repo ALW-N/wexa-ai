@@ -98,11 +98,16 @@ minikube start
 2. Create GHCR Secret:
 
 ```
+Bash:
 kubectl create secret docker-registry ghcr-secret \
   --docker-server=ghcr.io \
   --docker-username=<YOUR_USERNAME> \
   --docker-password=<YOUR_PERSONAL_ACCESS_TOKEN> \
   --docker-email=<YOUR_EMAIL_ID>
+
+Powershell:
+kubectl create secret docker-registry ghcr-secret --docker-server=ghcr.io --docker-username=<YOUR_USERNAME> --docker-password="<YOUR_PERSONAL_ACCESS_TOKEN>  " --docker-email="<YOUR_EMAIL_ID>"
+
 ```
 
 3. Apply manifests:
