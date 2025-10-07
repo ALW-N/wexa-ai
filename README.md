@@ -74,6 +74,7 @@ docker build -t ghcr.io/alw-n/wexa-ai:latest .
 ```
 docker run -p 3000:3000 ghcr.io/alw-n/wexa-ai:latest
 ```
+![Logo](images/docker.png)
 
 3. Open the app at `http://localhost:3000`
 
@@ -94,6 +95,7 @@ Workflow file: `.github/workflows/docker-build.yml`
 ```
 minikube start
 ```
+![Logo](images/minikube_start.png)
 
 2. Create GHCR Secret:
 
@@ -116,6 +118,7 @@ kubectl create secret docker-registry ghcr-secret --docker-server=ghcr.io --dock
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 ```
+![Logo](images/kubectl.png)
 
 4. Check status:
 
@@ -123,6 +126,7 @@ kubectl apply -f k8s/service.yaml
 kubectl get pods
 kubectl get svc
 ```
+![Logo](images/status.png)
 
 Ensure pods are Running.
 
@@ -133,6 +137,7 @@ Option 1 — Using Minikube Service:
 ```
 minikube service wexa-ai-service
 ```
+![Logo](images/service.png)
 
 Option 2 — Manual Access:
 
@@ -140,8 +145,7 @@ Option 2 — Manual Access:
 minikube ip
 http://<minikube-ip>:30001
 ```
-
-Example: `http://192.168.49.2:30001`
+![Logo](images/output.png)
 
 ## Deployment Verification
 
@@ -172,6 +176,7 @@ next start -p 3000 -H 0.0.0.0
 ```
 ghcr.io/alw-n/wexa-ai:latest
 ```
+![Logo](images/ghcr_repo.png)
 
 ## Submission Details
 
